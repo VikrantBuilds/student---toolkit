@@ -53,5 +53,6 @@ function clearNotes() {
 window.addEventListener("load", function () {
     const savedNotes = localStorage.getItem("studentNotes");
 
-    if (savedNotes) 
-    {document.getElementById("notes").value = savedNotes; }});
+    if (savedNotes) {
+        document.getElementById("notes").value = savedNotes; }
+});
