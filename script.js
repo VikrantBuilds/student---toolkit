@@ -38,3 +38,20 @@ function resetTimer() {
 }
 
 updateTimer();
+
+function saveNotes() {
+    const notes = document.getElementById("notes").value;
+    localStorage.setItem("studentNotes", notes);
+    alert("Notes saved! ✅");
+}
+
+function clearNotes() {
+    document.getElementById("notes").value = "";
+    localStorage.removeItem("studentNotes");
+}
+
+window.addEventListener("load", function () {
+    const savedNotes = localStorage.getItem("studentNotes");
+
+    if (savedNotes) 
+    {document.getElementById("notes").value = savedNotes; }});
