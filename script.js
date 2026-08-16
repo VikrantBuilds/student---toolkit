@@ -59,6 +59,7 @@ function loadNotes() {
 }
 
 window.addEventListener("DOMContentLoaded", loadNotes);
+
 function addTask() {
     const input = document.getElementById("taskInput");
     const taskText = input.value.trim();
