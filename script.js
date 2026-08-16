@@ -41,18 +41,21 @@ updateTimer();
 
 function saveNotes() {
     const notes = document.getElementById("notes").value;
-    localStorage.setItem("studentNotes", notes);
+    localStorage.setItem("studentToolkitNotes", notes);
     alert("Notes saved! ✅");
 }
 
 function clearNotes() {
     document.getElementById("notes").value = "";
-    localStorage.removeItem("studentNotes");
+    localStorage.removeItem("studentToolkitNotes");
 }
 
-window.addEventListener("load", function () {
-    const savedNotes = localStorage.getItem("studentNotes");
+function loadNotes() {
+    const savedNotes = localStorage.getItem("studentToolkitNotes");
 
-    if (savedNotes) {
-        document.getElementById("notes").value = savedNotes; }
-});
+    if (savedNotes !== null) {
+        document.getElementById("notes").value = savedNotes;
+    }
+}
+
+window.addEventListener("DOMContentLoaded", loadNotes);
